@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        table, th, td{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        function AddInformation() {
+            var tr = document.createElement("tr");
+
+            var textInput1 = document.getElementById("AddName");
+            var Name = textInput1.value;
+            var td = document.createElement("td");
+            td.innerHTML = Name;
+            tr.appendChild(td);
+
+            var textInput2 = document.getElementById("AddHome");
+            var Home = textInput2.value;
+            var td = document.createElement("td");
+            td.innerHTML = Home;
+            tr.appendChild(td);
+
+            var textInput3 = document.getElementById("AddTel"); //ดึงค่าตัวแปรที่ชื่อว่า AddTel เข้ามา
+            var Tel = textInput3.value; //
+            var td = document.createElement("td");  //สร้าง element ขึ้นมาใน td
+            td.innerHTML = Tel;
+            tr.appendChild(td);
+            
+            var table = document.getElementById("playlist");
+            table.appendChild(tr);
+        }
+    </script>
+    
+</head>
+<body>
+    <form>
+        <label>ชื่อลูกค้า : </label><input type="text" id="AddName"> <br>
+        <label>ที่อยู่ : </label> <input type="text" id="AddHome"> <br>
+        <label>โทรศัพท์ : </label> <input type="tel" id="AddTel"> <br>
+        <input type="button" id="addButton" value="เพิ่ม" onclick="AddInformation()">
+    </form>
+    <table id="playlist">
+        <tr>
+            <th>ชื่อลูกค้า</th>
+            <th>ที่อยู่</th>
+            <th>โทรศัพท์</th><br>
+        </tr>
+
+  
+        
+    </table>
+</body>
+</html>
